@@ -1,0 +1,22 @@
+@(message: String)
+
+@main("Welcome to Play") {
+    <section ng-controller="ChatCtrl">
+
+        name:<input type="text" id="username" name="username" ng-model="username" />&nbsp;
+        room:<input type="text" id="room" name="room" ng-model="room" />&nbsp;
+        <button ng-click="join(room,username)">Join</button>
+        <br />
+
+        messsage: <input type="text" id="message" name="message" ng-model="message" />&nbsp;
+        <button ng-click="send(message)">Send</button>
+
+        <hr />
+        <article>
+            <p ng-repeat="message in messages" ng-model="messages">
+                {{message.name}} says: {{message.text}}
+            </p>
+        </article>
+    </section>
+}
+
