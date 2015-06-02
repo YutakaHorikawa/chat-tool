@@ -2,15 +2,21 @@
 
 @main("Welcome to Play") {
     <section ng-controller="ChatCtrl">
-
-        name:<input type="text" id="username" name="username" ng-model="username" />&nbsp;
-        room:<input type="text" id="room" name="room" ng-model="room" />&nbsp;
-        <button ng-click="join(room,username)">Join</button>
+		
+	<div class="form-inline">
+		<label for="disabledTextInput">名前:</label>
+		<input type="text" id="username" name="username" ng-model="username" class="form-control" />&nbsp;
+		<label for="disabledTextInput">Room:</label>
+		<input type="text" id="room" name="room" ng-model="room" class="form-control" />&nbsp;
+		<button ng-click="join(room,username)" class="btn btn-primary btn-sm">Join</button>
+	</div>
         <br />
-
-        messsage: <input type="text" id="message" name="message" ng-model="message" />&nbsp;
-        <button ng-click="send(message)">Send</button>
-
+	<div class="form-groupm">
+		<label for="disabledTextInput">発言:</label>
+		<textarea id="message" name="message" class="form-control" rows="3" ng-model="message"></textarea>
+		&nbsp;
+		<button ng-click="send(message)" class="btn btn-primary btn-sm">Send</button>
+	</div>
         <hr />
         <article>
             <p ng-repeat="message in messages" ng-model="messages">
