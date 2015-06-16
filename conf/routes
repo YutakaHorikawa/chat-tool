@@ -3,7 +3,9 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index
+GET     /                          	 controllers.Application.index
+GET     /user/signup                     controllers.User.signup
+POST    /user/create                     controllers.User.create
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /chat/:roomId               controllers.Application.chat(roomId:String)
