@@ -5,7 +5,7 @@ chatApp.controller('ChatCtrl', function ($scope) {
   $scope.socket = null;
 
   $scope.username = "1";
-  $scope.room = 'Lobby1';
+  $scope.room = 'room1';
 
   $scope.join = function(room, username) {
     console.log(room, username);
@@ -23,5 +23,23 @@ chatApp.controller('ChatCtrl', function ($scope) {
   $scope.send = function(message) {
     $scope.socket.send(message);
   }
+});
+
+chatApp.controller('UserCtrl', function ($scope) {
+  
+  $scope.signup = function(email, password) {
+
+      $http({
+        method: 'POST',
+        url: 'http://127.0.0.1:9000/user/create'
+        data: params
+      }).success(function(data, status, headers, config) {
+        console.log(data)
+      }).error(function(data, status, headers, config) {
+        console.log(data)
+      });
+  }
+
+
 });
 

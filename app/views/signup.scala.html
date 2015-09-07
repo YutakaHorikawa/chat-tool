@@ -1,0 +1,15 @@
+@(message: String)
+@main("Sign up") {
+    <section ng-controller="UserCtrl">
+	<div class="form-inline">
+		<label for="disabledTextInput">メールアドレス:</label>
+		<input type="text" id="email" name="email" ng-model="email" class="form-control" />&nbsp;
+		<span class="text-danger" ng-show="userForm.email.$error.required">入力必須項目です</span>
+		<label for="disabledTextInput">パスワード:</label>
+		<input type="text" id="password" name="password" ng-model="password" class="form-control" />&nbsp;
+		<span class="text-danger" ng-show="userForm.password.$error.required">入力必須項目です</span>
+		<button ng-click="signup(email,password)" class="btn btn-primary btn-sm">Sign Up</button>
+	</div>
+    </section>
+}
+
